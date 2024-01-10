@@ -1,0 +1,41 @@
+Set(
+    _firstDayOfMonth,
+    DateAdd(
+        Today(),
+        1 - Day(Today()),
+        Days
+    )
+);
+Set(
+    _lastDayOfMonth,
+    DateAdd(
+        DateAdd(
+            _firstDayOfMonth,
+            1,
+            Months
+        ),
+        -1,
+        Days
+    )
+);
+Set(
+    _firstDayInView,
+    DateAdd(
+        _firstDayOfMonth,
+        -(Weekday(_firstDayOfMonth) - 2 + 1),
+        Days
+    )
+);
+Set(
+    _lastDayInView,
+    DateAdd(
+        _firstDayInView,
+        41,
+        Days
+    )
+);
+Select(btnUpdateCollections);
+Set(
+    _dateSelected,
+    Today()
+);

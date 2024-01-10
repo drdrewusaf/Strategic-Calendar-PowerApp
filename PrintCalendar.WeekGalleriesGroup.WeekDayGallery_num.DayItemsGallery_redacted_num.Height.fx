@@ -1,0 +1,1 @@
+(Value(lblMaxRows_#.Text) * 18)
